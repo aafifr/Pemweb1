@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbox</title>
+</head>
+<style>
+    .container{
+        border: 1px solid black;
+        max-width: 400px;
+    }
+
+    .box{
+        height: 200px;
+        overflow-y: auto;
+    }
+
+    #chat{
+        width: 86%;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box" id="chatBox">
+
+        </div>
+
+        <div class="chat">
+            <input type="text" id="chat">
+            <button onclick="send()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function send(){
+            // tangkap elemen yang dibutuhkan
+            const chatBox = document.getElementById("chatBox")
+            const chat = document.getElementById("chat")
+
+            // tambahkan teks dari chat ke chatbox
+            chatBox.innerHTML += chat.value +"<br>"
+
+            // mengosongkan text dalam chat input
+            chat.value = ""
+        }
+
+    </script>
+</body>
+</html>

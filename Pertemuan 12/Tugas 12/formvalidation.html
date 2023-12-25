@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form action="#" id="form" name="myForm">
+        <table>
+            <tr>
+                <td><label for="username">Nama Pelanggan</label></td>
+                <td>: <input type="text" id="username" name="username" required  placeholder="maksimal 30 karakter"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td>: <input type="text" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="waktu">Jam Keberangkatan</label></td>
+                <td>: <input type="time" id="waktu" name="waktu" min="00:00" max="23:59" required></td>
+            </tr>
+            <tr>
+                <td><label for="tujuan">Tujuan Keberangkatan</label></td>
+                <td>: <input type="text" id="tujuan" name="tujuan" required></td>
+            </tr>
+            <tr>
+                <td><label for="tiket">Jumlah Tiket</label></td>
+                <td>: <input type="number" id="tiket" name="tiket" required></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" onclick="kirim()">Kirim</button>
+                    <button type="reset">batal</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- script -->
+    <script>
+        function kirim(){
+            let userInput = document.forms["myForm"]["username"].value;
+            let emailInput = document.forms["myForm"]["email"].value;
+            let waktuInput = document.forms["myForm"]["waktu"].value;
+            let tujuanInput = document.forms["myForm"]["tujuan"].value;
+            let tiketInput = document.forms["myForm"]["tiket"].value;
+
+            // validasi nama pelanggan
+            if (userInput == "") {
+                alert("Nama Pelanggan belum di isi");
+                return false;
+            }
+
+            // validasi email
+            if (emailInput == "") {
+                alert("Email belum di isi")
+                return false;
+            }
+
+            // validasi jam keberangkatan
+            if (waktuInput == "") {
+                alert("Jam Keberangkatan belum di isi")
+                return false;
+            }
+
+            // validasi tujuan keberangkatan
+            if (tujuanInput == "") {
+                alert("Tujuan Keberangkatan belum di isi")
+                return false;
+            }
+
+            // validasi tujuan keberangkatan
+            if (tiketInput == "") {
+                alert("Jumlah Tiket belum di isi")
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

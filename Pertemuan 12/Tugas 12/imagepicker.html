@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganti Foto</title>
+</head>
+<body>
+    <h2>Ganti Foto</h2>
+
+    <label for="pilihgambar">Pilih Gambar</label>
+    <select id="pilihgambar" onchange="tampilgambar()">
+        <option value="kucing">Kucing</option>
+        <option value="burung">Burung</option>
+        <option value="beruang">Beruang</option>
+        <option value="ayam">Ayam</option>
+        <option value="kuda">Kuda</option>
+        <option value="kelinci">Kelinci</option>
+    </select>
+    <br> <br>
+    <img src="https://bit.ly/474XNsO" id="gambarpilih" alt="kosong" width="300">
+
+    <script>
+        function tampilgambar() {
+            let nilaiterpilih = document.getElementById("pilihgambar").value;
+            let gambarterpilih = document.getElementById("gambarpilih").value;
+
+            switch (nilaiterpilih){
+                case "kucing":
+                    gambarpilih.src ="https://bit.ly/474XNsO";
+                    break;
+                case "burung":
+                    gambarpilih.src ="https://bit.ly/3tyUmfY";
+                    break;
+                case "beruang":
+                    gambarpilih.src ="https://asset-a.grid.id/crop/0x0:0x0/780x800/photo/bobofoto/original/20920_beruang-grizzly-bisa-menghabiskan-180-kg-makanan-cari-tahu-rahasia-lainnya-yuk.jpg";
+                    break;
+                case "ayam":
+                    gambarpilih.src ="https://images.bisnis.com/posts/2020/11/14/1317724/images.jpeg";
+                    break;
+                case "kuda":
+                    gambarpilih.src ="https://cdn0-production-images-kly.akamaized.net/ln13LBi6KhgsEOhC_wnRwaEbQog=/1200x1200/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3153869/original/063163600_1592288896-pexels-photo-1996330.jpeg";
+                    break;
+                case "kelinci":
+                    gambarpilih.src ="https://cdn1-production-images-kly.akamaized.net/0oauzqZdRi0ODqrgChQx13PZxyE=/1200x1200/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3233586/original/068197700_1599696585-photo-1518796745738-41048802f99a.jpg";
+                    break;
+            }
+        }
+    </script>
+    
+</body>
+</html>
